@@ -4,6 +4,22 @@ import { Linkedin, Github, Instagram } from 'lucide-react'
 
 export default function AboutPage() {
   return (
+    <>
+    <head>
+      <title>About - Code 365</title>
+      <meta name="description" content="Learn more about Code 365 and our mission to empower aspiring programmers and experienced developers to master Data Structures and Algorithms." />
+      <meta name="keywords" content="DSA, Problems, Interview Questions" />
+      <meta name="author" content="Code 365 Team" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DXGPW9TNQHX');
+          `}
+        </script>
+    </head>
     <div className="max-w-4xl mx-auto space-y-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 p-8 rounded-lg shadow-lg">
       <h1 className="text-4xl font-bold mb-8 text-center text-gradient-primary">About Code 365</h1>
       
@@ -70,6 +86,7 @@ export default function AboutPage() {
         </p>
       </section>
     </div>
+    </>
   )
 }
 
