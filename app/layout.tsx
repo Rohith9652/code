@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import Footer from '@/components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
+declare const dataLayer: any;
 
 export const metadata = {
   title: 'Code 365 - DSA Cracker',
@@ -22,12 +23,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-DXGPW9TNQH');</script>
-    </head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DXGPW9TNQH');
+</script>
+      </head>
       <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen">
