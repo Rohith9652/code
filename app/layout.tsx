@@ -17,6 +17,7 @@ export const metadata = {
 };
 
 
+
 export default function RootLayout({
   children,
 }: {
@@ -25,20 +26,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
-        {/* Google Analytics Script */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DXGPW9TNQH');
-          `}
-        </Script>
-      </head>
+  {/* Google Analytics */}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH"></script>
+  <script>
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DXGPW9TNQHX');
+    `}
+  </script>
+</head>
+
+
       <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen">
