@@ -20,6 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH"></script>
+      <script>
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        function gtag() {(window as any).dataLayer.push(arguments)}
+        gtag('js', new Date());
+        gtag('config', 'G-DXGPW9TNQH');
+        </script>
+    </head>
       <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen">
