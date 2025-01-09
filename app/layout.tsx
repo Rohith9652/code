@@ -5,14 +5,17 @@ import { ModeToggle } from "@/components/mode-toggle"
 import Link from 'next/link'
 import { Analytics } from '@vercel/analytics/react'
 import Footer from '@/components/footer'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
-declare const dataLayer: any;
 
 export const metadata = {
   title: 'Code 365 - DSA Cracker',
   description: 'Master Data Structures and Algorithms with our curated problem set',
-}
+  keywords: 'DSA, Data Structures, Algorithms, Coding Practice, Programming',
+  author: 'Code 365 Team',
+};
+
 
 export default function RootLayout({
   children,
@@ -21,15 +24,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DXGPW9TNQH');
-</script>
+       <head>
+        {/* Google Analytics Script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-DXGPW9TNQH`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DXGPW9TNQH');
+          `}
+        </Script>
       </head>
       <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
